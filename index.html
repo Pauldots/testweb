@@ -1,267 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Website</title>
-  <style>
-    /* Add some basic styling */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f2f2f2;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul's Paradise Random Story</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
 
-    .container {
-      width: 90%;
-      margin: 0 auto;
-      padding: 20px;
-    }
+  #storyButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Comic Sans MS', cursive;
+  }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  #storyButton:hover {
+    background-color: #2980b9;
+  }
 
-    .logo img {
-      max-width: 100%;
-      height: auto;
-    }
+  .story-container {
+    max-width: 600px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
+  .story {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: left;
+  }
 
-    nav li {
-      margin: 0 10px;
-    }
+  .story p {
+    margin-bottom: 10px;
+  }
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-    }
+  .font-1 {
+    font-family: 'Arial', sans-serif;
+  }
 
-    .game-templates {
-      margin-top: 50px;
-    }
+  .font-2 {
+    font-family: 'Verdana', sans-serif;
+  }
 
-    .game-templates h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #333;
-    }
+  .font-3 {
+    font-family: 'Georgia', serif;
+  }
 
-    .game-templates ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-    }
+  .font-4 {
+    font-family: 'Times New Roman', serif;
+  }
 
-    .game-templates li {
-      margin: 10px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: all 0.2s ease-in-out;
-    }
-
-    .game-templates li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .game-templates .game-template {
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    .game-template .game-image {
-      margin-bottom: 10px;
-    }
-
-    .game-template .game-image img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .game-template .game-info {
-      font-size: 14px;
-      color: #333;
-    }
-
-    footer {
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 14px;
-      color: #999;
-    }
-  </style>
+  .font-5 {
+    font-family: 'Courier New', monospace;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <img src="path/to/logo.png" alt="Game Website Logo">
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="game-templates">
-      <h2>Game Templates</h2>
-      <ul>
-        <li>
-          <div class="game-template" onclick="redirectToGame('SprayAndPraAAAAAy')">
-            <div class="game-image">
-              <img src="path/to/game1.png" alt="SprayAndPraAAAAAy">
-            </div>
-            <div class="game-info">
-              <h3 id="SprayAndPraAAAAAyName">SprayAndPraAAAAAy</h3>
-              <p id="SprayAndPraAAAAAyGenres">Action, Adventure</p>
-              <p id="SprayAndPraAAAAAyReleaseDate">Release Date: 2022</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="game-template" onclick="redirectToGame('game2')">
-            <div class="game-image">
-              <img src="path/to/game2.png" alt="Game 2">
-            </div>
-            <div class="game-info">
-              <h3 id="game2Name">Game 2</h3>
-              <p id="game2Genres">RPG, Simulation</p>
-              <p id="game2ReleaseDate">Release Date: 2022</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="game-template" onclick="redirectToGame('game3')">
-            <div class="game-image">
-              <img src="path/to/game3.png" alt="Game 3">
-            </div>
-            <div class="game-info">
-              <h3 id="game3Name">Game 3</h3>
-              <p id="game3Genres">Strategy, Puzzle</p>
-              <p id="game3ReleaseDate">Release Date: 2022</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="game-template" onclick="redirectToGame('game4')">
-            <div class="game-image">
-              <img src="path/to/game4.png" alt="Game 4">
-            </div>
-            <div class="game-info">
-              <h3 id="game4Name">Game 4</h3>
-              <p id="game4Genres">Sports, Platformer</p>
-              <p id="game4ReleaseDate">Release Date: 2022</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="game-template" onclick="redirectToGame('game5')">
-            <div class="game-image">
-              <img src="path/to/game5.png" alt="Game 5">
-            </div>
-            <div class="game-info">
-              <h3 id="game5Name">Game 5</h3>
-              <p id="game5Genres">Action, Adventure</p>
-              <p id="game5ReleaseDate">Release Date: 2022</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="game-template" onclick="redirectToGame('game6')">
-            <div class="game-image">
-              <img src="path/to/game6.png" alt="Game 6">
-            </div>
-            <div class="game-info">
-              <h3 id="game6Name">Game 6</h3>
-              <p id="game6Genres">RPG, Simulation</p>
-              <p id="game6ReleaseDate">Release Date: 2022</p>
-            </div>
-          </div>
-        </li>
-        <!-- Add more game templates here -->
-      </ul>
-    </section>
-
-    <footer>
-      <p>&copy; 2022 Game Website. All rights reserved.</p>
-    </footer>
-  </div>
+  <button id="storyButton" onclick="generateStory()">Tell Me a Nonsensical Story</button>
+  <div id="storyContainer" class="story-container"></div>
 
   <script>
-    // Add games to the templates
-    function addGame(gameName, gameImage, gameGenres, gameReleaseDate) {
-      const gameTemplate = document.createElement('li');
-      const gameDiv = document.createElement('div');
-      const gameImageDiv = document.createElement('div');
-      const gameInfoDiv = document.createElement('div');
+    // Arrays for different characters, actions, and places
+    var characters = ['Pauldots', 'Tricky', 'Mr G', 'Zappy', 'Glimmer'];
+    var actions = ['danced with', 'sang to', 'flew over', 'ate with', 'jumped over', 'tickled', 'whispered to', 'spun around with', 'high-fived', 'enchanted'];
+    var places = ['a rainbow', 'the moon', 'a giant mushroom', 'a floating island', 'a talking tree', 'a marshmallow castle', 'a chocolate river', 'a cloud palace', 'a candy mountain', 'a magical forest', 'an enchanted lake', 'a crystal cave'];
 
-      const gameImage = document.createElement('img');
-      gameImage.src = gameImage;
-      gameImage.alt = gameName;
-
-      const gameNameElement = document.createElement('h3');
-      gameNameElement.id = `${gameName}Name`;
-      gameNameElement.textContent = gameName;
-
-      const gameGenresElement = document.createElement('p');
-      gameGenresElement.id = `${gameName}Genres`;
-      gameGenresElement.textContent = gameGenres;
-
-      const gameReleaseDateElement = document.createElement('p');
-      gameReleaseDateElement.id = `${gameName}ReleaseDate`;
-      gameReleaseDateElement.textContent = `Release Date: ${gameReleaseDate}`;
-
-      gameImageDiv.appendChild(gameImage);
-      gameInfoDiv.appendChild(gameNameElement);
-      gameInfoDiv.appendChild(gameGenresElement);
-      gameInfoDiv.appendChild(gameReleaseDateElement);
-
-      gameDiv.appendChild(gameImageDiv);
-      gameDiv.appendChild(gameInfoDiv);
-      gameTemplate.appendChild(gameDiv);
-
-      document.querySelector('.game-templates ul').appendChild(gameTemplate);
-
-      // Add click event listener
-      gameTemplate.addEventListener('click', () => redirectToGame(gameName));
+    // Function to generate a random integer within a range
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    // Redirect to the game page
-    function redirectToGame(gameName) {
-      window.open(`https://pauldots.github.io/SprayAndPraAAAAAy/`, '_blank');
+    // Function to generate a random story
+    function generateStory() {
+      // Remove previous stories
+      var storyContainer = document.getElementById('storyContainer');
+      storyContainer.innerHTML = '';
+
+      // Randomly select characters
+      var randomCharacter1 = characters[getRandomInt(0, characters.length - 1)];
+      var randomCharacter2 = characters[getRandomInt(0, characters.length - 1)];
+
+      // Ensure characters are not the same
+      while (randomCharacter1 === randomCharacter2) {
+        randomCharacter2 = characters[getRandomInt(0, characters.length - 1)];
+      }
+
+      // Randomly select action and place
+      var randomAction = actions[getRandomInt(0, actions.length - 1)];
+      var randomPlace = places[getRandomInt(0, places.length - 1)];
+
+      // Randomly select a beginning for the story
+      var beginnings = [
+        "Once upon a time, in the land of Paul's paradise,",
+        "In a galaxy far, far away, where Paul's paradise shines bright,",
+        "Deep within the enchanted forests of Paul's paradise,",
+        "Amidst the whimsical dreamscape of Paul's paradise,",
+        "Long ago, when Paul's paradise was still a mystery,",
+        "Under the starry skies of Paul's paradise,",
+        "In the heart of Paul's paradise, where magic knows no bounds,"
+      ];
+      var randomBeginning = beginnings[getRandomInt(0, beginnings.length - 1)];
+
+      // Construct the story with intentionally bad grammar and nonsensical sentences
+      var story = `${randomBeginning} there were two people, ${randomCharacter1} and ${randomCharacter2}. They went to ${randomPlace} and danced like a happy bird. Then, ${randomCharacter1} sang a song about clouds, and ${randomCharacter2} jumped over the moon. But suddenly, a marshmallow castle fell from the sky, and they ate it all. It was the most strange day ever seen!`;
+
+      // Create a new paragraph element for the story and append it to the storyContainer
+      var storyElement = document.createElement('div');
+      storyElement.classList.add('story');
+
+      // Randomly assign a font class to the story
+      var fonts = ['font-1', 'font-2', 'font-3', 'font-4', 'font-5'];
+      var randomFont = fonts[getRandomInt(0, fonts.length - 1)];
+      storyElement.classList.add(randomFont);
+
+      var paragraph = document.createElement('p');
+      paragraph.textContent = story;
+      storyElement.appendChild(paragraph);
+
+      storyContainer.appendChild(storyElement);
     }
-
-    // Add games to the templates
-    addGame('SprayAndPraAAAAAy', 'path/to/game1.png', 'Action, Adventure', '2022');
-    addGame('Game 3', 'path/to/game3.png', 'Strategy, Puzzle', '2022');
-    addGame('Game 4', 'path/to/game4.png', 'Sports, Platformer', '2022');
-    addGame('Game 5', 'path/to/game5.png', 'Action, Adventure', '2022');
-    addGame('Game 6', 'path/to/game6.png', 'RPG, Simulation', '2022');
-    // Add more games using the addGame function
-
-    // Change the name of a game
-    document.getElementById('SprayAndPraAAAAAyName').textContent = 'SprayAndPraAAAAAy';
-    // Change the name of other games using the appropriate IDs
   </script>
 </body>
 </html>
